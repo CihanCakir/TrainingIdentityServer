@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DortadimIdentityServer.AuthServer", "DortadimIdentityServer.AuthServer\DortadimIdentityServer.AuthServer.csproj", "{06F92B91-A41F-4F75-9B9B-072D6A744214}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DortadimIdentityServer.Client1", "DortadimIdentityServer.Client1\DortadimIdentityServer.Client1.csproj", "{AD84A465-D163-4B4A-B7D5-E4643A71CE49}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DortadimIdentityServer.Client2", "DortadimIdentityServer.Client2\DortadimIdentityServer.Client2.csproj", "{F1444368-C363-4E49-B33B-D89422FC855C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DortadimIdentityServer.API1", "DortadimIdentityServer.API1\DortadimIdentityServer.API1.csproj", "{56B8C798-E357-49E7-98CA-4D0628FEC49A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DortadimIdentityServer.API2", "DortadimIdentityServer.API2\DortadimIdentityServer.API2.csproj", "{10C40A7F-B453-42DB-A50A-A5792485A7DA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9EAC4B18-DF9D-4CEF-B1B0-598082A18A92}"
+	ProjectSection(SolutionItems) = preProject
+		Ports.txt = Ports.txt
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{06F92B91-A41F-4F75-9B9B-072D6A744214}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06F92B91-A41F-4F75-9B9B-072D6A744214}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06F92B91-A41F-4F75-9B9B-072D6A744214}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06F92B91-A41F-4F75-9B9B-072D6A744214}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD84A465-D163-4B4A-B7D5-E4643A71CE49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD84A465-D163-4B4A-B7D5-E4643A71CE49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD84A465-D163-4B4A-B7D5-E4643A71CE49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD84A465-D163-4B4A-B7D5-E4643A71CE49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1444368-C363-4E49-B33B-D89422FC855C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1444368-C363-4E49-B33B-D89422FC855C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1444368-C363-4E49-B33B-D89422FC855C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1444368-C363-4E49-B33B-D89422FC855C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56B8C798-E357-49E7-98CA-4D0628FEC49A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56B8C798-E357-49E7-98CA-4D0628FEC49A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56B8C798-E357-49E7-98CA-4D0628FEC49A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56B8C798-E357-49E7-98CA-4D0628FEC49A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10C40A7F-B453-42DB-A50A-A5792485A7DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10C40A7F-B453-42DB-A50A-A5792485A7DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10C40A7F-B453-42DB-A50A-A5792485A7DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10C40A7F-B453-42DB-A50A-A5792485A7DA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0A6C8C6B-8BEF-496D-B66D-520EF7C67694}
+	EndGlobalSection
+EndGlobal
