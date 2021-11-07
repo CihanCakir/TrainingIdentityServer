@@ -1,13 +1,9 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace DortadimIdentityServer.AuthServer
 {
@@ -27,6 +23,8 @@ namespace DortadimIdentityServer.AuthServer
             services.AddIdentityServer().AddInMemoryApiResources(Config.GetApiResources())
                                         .AddInMemoryApiScopes(Config.GetApiScopes())
                                         .AddInMemoryClients(Config.GetClients())
+                                        .AddInMemoryIdentityResources(Config.GetIdentityResources())
+                                        .AddTestUsers(Config.GetTestUsers().ToList())
                                         .AddDeveloperSigningCredential();
             
             services.AddControllersWithViews();

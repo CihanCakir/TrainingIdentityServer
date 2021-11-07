@@ -1,7 +1,9 @@
 ﻿using IdentityServer4.Models;
+using IdentityServer4.Test;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace DortadimIdentityServer.AuthServer
@@ -11,9 +13,9 @@ namespace DortadimIdentityServer.AuthServer
         public static IEnumerable<ApiResource> GetApiResources()
         {
             return new List<ApiResource>() {
-            new ApiResource("resource_api1"){ 
+            new ApiResource("resource_api1"){
                 Scopes={ "api1.read", "api1.write", "api1.update" },
-                ApiSecrets = new []{ new Secret("secretapi1".Sha256())} 
+                ApiSecrets = new []{ new Secret("secretapi1".Sha256())}
                 },
             new ApiResource("resource_api2"){
                 Scopes={ "api2.read", "api2.write", "api2.update" } ,
@@ -56,7 +58,54 @@ namespace DortadimIdentityServer.AuthServer
                     ClientSecrets =new []{new Secret("secret".Sha256())},
                     AllowedGrantTypes = GrantTypes.ClientCredentials,
                     AllowedScopes = {"api2.read","api1.write","api1.update"}
-                }
+                },
+                 new Client()
+                {
+                    ClientId ="Client1-Mvc",
+                    ClientName="Client 1 Mvc WEB uygulaması",
+                    ClientSecrets =new []{new Secret("secret".Sha256())},
+                    AllowedGrantTypes = GrantTypes.ClientCredentials,
+                    AllowedScopes = {"api1.read"}
+                },
+            };
+        }
+
+
+        public static IEnumerable<IdentityResource> GetIdentityResources()
+        {
+            return new List<IdentityResource>() {
+                    new IdentityResources.OpenId(), //SubId
+                    new IdentityResources.Profile() //Kullanıcının+
+            };
+        }
+        public static IEnumerable<TestUser> GetTestUsers()
+        {
+            //https://developer.okta.com/blog/2017/07/25/oidc-primer-part-1
+            return new List<TestUser>() {
+                    new TestUser
+                    {
+                        SubjectId ="1",
+                        Username="bencakirim", // çoğu sistem e-posta üzerinden geçimini sağlıyor username alanında e-posta bilgisi tutulabilir
+                        Password = "password",
+                        Claims= new List<Claim>()
+                        {
+                            new Claim("given_name","Cihan"),
+                            new Claim("family_name","Çakır")
+
+                        }
+                    },
+                     new TestUser
+                    {
+                        SubjectId ="1",
+                        Username="necla", // çoğu sistem e-posta üzerinden geçimini sağlıyor username alanında e-posta bilgisi tutulabilir
+                        Password = "password",
+                        Claims= new List<Claim>()
+                        {
+                            new Claim("given_name","Necla"),
+                            new Claim("family_name","Sevencan")
+
+                        }
+                    },
             };
         }
 
