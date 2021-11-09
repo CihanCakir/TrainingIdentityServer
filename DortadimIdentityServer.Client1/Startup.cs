@@ -24,7 +24,7 @@ namespace DortadimIdentityServer.Client1
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddAuthentication(opt =>
-            {
+            { 
                 opt.DefaultScheme = "Cookies";
                 opt.DefaultChallengeScheme = "oidc";
 
