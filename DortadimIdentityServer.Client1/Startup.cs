@@ -35,6 +35,9 @@ namespace DortadimIdentityServer.Client1
                 opt.ClientId = "Client1-Mvc";
                 opt.ClientSecret = "secret";
                 opt.ResponseType = "code id_token"; //code ile authorization code ile Access token alýncak, id_token ile tokený doðrulamak için alýyoruz.
+                opt.GetClaimsFromUserInfoEndpoint = true; // claim üzerinde kullanýcý verilerine ulaþmak için
+                opt.SaveTokens = true; // mevcut Tokený Kayýt etmek için 
+                opt.Scope.Add("api1.read");
             });
 
 
@@ -59,6 +62,7 @@ namespace DortadimIdentityServer.Client1
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

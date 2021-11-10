@@ -51,7 +51,7 @@ namespace DortadimIdentityServer.AuthServer
                     ClientSecrets =new []{new Secret("secret".Sha256())},
                     AllowedGrantTypes = GrantTypes.ClientCredentials,
                     AllowedScopes = {"api1.read"}
-                }, 
+                },
                  new Client()
                 {
                     ClientId ="Client2",
@@ -64,10 +64,11 @@ namespace DortadimIdentityServer.AuthServer
                 {
                     ClientId ="Client1-Mvc",
                     ClientName="Client 1 Mvc WEB uygulaması",
+                    RequirePkce = false, 
                     ClientSecrets =new []{new Secret("secret".Sha256())},
                     AllowedGrantTypes = GrantTypes.Hybrid,
-                    RedirectUris = new List<string>{"https://localhost:5006/sign-oidc"},
-                    AllowedScopes = {IdentityServerConstants.StandardScopes.OpenId,IdentityServerConstants.StandardScopes.Profile}
+                    RedirectUris = new List<string>{"https://localhost:5006/signin-oidc"},
+                    AllowedScopes = {IdentityServerConstants.StandardScopes.OpenId,IdentityServerConstants.StandardScopes.Profile, "api2.read"}
                 },
             };
         }
