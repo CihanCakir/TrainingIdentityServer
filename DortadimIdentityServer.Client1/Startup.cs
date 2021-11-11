@@ -38,6 +38,8 @@ namespace DortadimIdentityServer.Client1
                 opt.GetClaimsFromUserInfoEndpoint = true; // claim üzerinde kullanýcý verilerine ulaþmak için
                 opt.SaveTokens = true; // mevcut Tokený Kayýt etmek için 
                 opt.Scope.Add("api1.read");
+                opt.Scope.Add("offline_access");
+
             });
 
 

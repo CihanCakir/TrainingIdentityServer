@@ -64,12 +64,18 @@ namespace DortadimIdentityServer.AuthServer
                 {
                     ClientId ="Client1-Mvc",
                     ClientName="Client 1 Mvc WEB uygulaması",
-                    RequirePkce = false, 
+                    RequirePkce = false,
                     ClientSecrets =new []{new Secret("secret".Sha256())},
                     AllowedGrantTypes = GrantTypes.Hybrid,
                     RedirectUris = new List<string>{"https://localhost:5006/signin-oidc"},
-                    AllowedScopes = {IdentityServerConstants.StandardScopes.OpenId,IdentityServerConstants.StandardScopes.Profile, "api2.read"}
-                },
+                    PostLogoutRedirectUris = new List<string>{ "https://localhost:5006/signout-callback-oidc" },
+                    AllowedScopes = {IdentityServerConstants.StandardScopes.OpenId,IdentityServerConstants.StandardScopes.Profile, "api1.read",IdentityServerConstants.StandardScopes.OfflineAccess},
+                    AccessTokenLifetime =2*60*60, // access token yaşam süresi 
+                    RefreshTokenExpiration = TokenExpiration.Absolute,
+                    AllowOfflineAccess = true, // refresh token kullanılabileceğini tanımlıyoruz.
+                    RefreshTokenUsage = TokenUsage.ReUse, // refresh token kullanım durumunu
+                    AbsoluteRefreshTokenLifetime = (int) (DateTime.Now.AddDays(60)-DateTime.Now).TotalSeconds, // refresh token yaşam süresi belirli bir tarih içerisinde geçerli
+                 },
             };
         }
 

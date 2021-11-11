@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,13 @@ namespace DortadimIdentityServer.Client1.Controllers
         public IActionResult Index()
         {
             return View();
+        }
+
+        public async Task Logout()
+        {
+            await HttpContext.SignOutAsync("cookies");
+            await HttpContext.SignOutAsync("oidc");
+
         }
     }
 }
